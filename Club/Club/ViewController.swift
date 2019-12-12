@@ -13,6 +13,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        ServiceManager.fetchCompaniesAndMembers { (result, error) in
+            if let companies = result {
+                print(companies)
+            } else {
+                if let e = error {
+                    print(e.localizedDescription)
+                }
+            }
+        }
     }
 
 

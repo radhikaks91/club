@@ -9,7 +9,7 @@
 import Foundation
 
 struct Company: Codable {
-    var id: String
+    var _id: String
     var company: String
     var website: String
     var logo: String
@@ -18,7 +18,7 @@ struct Company: Codable {
 }
 
 struct Member: Codable {
-    var id: String
+    var _id: String
     var name: Name
     var age: Int
     var email: String
