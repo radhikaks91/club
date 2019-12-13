@@ -12,7 +12,9 @@ struct Company: Codable {
     var _id: String
     var company: String
     var website: String
-    var logo: String
+    var logo: String {
+        return "https://placehold.it/320x180"
+    }
     var about: String
     var members: [Member]
 }
