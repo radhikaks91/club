@@ -12,11 +12,40 @@ struct Company: Codable {
     var _id: String
     var company: String
     var website: String
-    var logo: String {
-        return "https://placehold.it/320x180"
-    }
+    var logo: String
     var about: String
     var members: [Member]
+    
+    var logoUrl: URL? {
+        return URL(string: "https://placehold.it/400x150/ADD8E6/FFFFFF/?text=\(company)")
+    }
+    var websiteUrl: URL? {
+        return URL(string: "https://\(website)")
+    }
+    var viewMembersTitle: String? {
+        return "View Members (\(members.count))"
+    }
+    
+    var isFollowing: Bool {
+        get {
+            let key = "following_\(_id)"
+            return UserDefaults.standard.bool(forKey: key)
+        }
+        set {
+            let key = "following_\(_id)"
+            UserDefaults.standard.set(newValue, forKey: key)
+        }
+    }
+    var isFavourite: Bool {
+        get {
+            let key = "favourite_\(_id)"
+            return UserDefaults.standard.bool(forKey: key)
+        }
+        set {
+            let key = "favourite_\(_id)"
+            UserDefaults.standard.set(newValue, forKey: key)
+        }
+    }
 }
 
 struct Member: Codable {
