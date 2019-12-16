@@ -32,10 +32,11 @@ class CompanyCell: UITableViewCell {
         about.text = company.about
         viewMember.text = company.viewMembersTitle
         favourite.isSelected  = companyDetail.isFavourite
-        follow.setTitle(companyDetail.isFollowing ? "UNFOLLOW" : "FOLLOW", for: .normal)
+        follow.setTitle(companyDetail.isFollowing ? AppStrings.unfollow : AppStrings.follow, for: .normal)
     }
     
     @IBAction func showMembers(_ sender: Any) {
+        parentViewController?.performSegue(withIdentifier: StoryboardIdentifiers.viewMembers, sender: companyDetail)
     }
     
     @IBAction func openWebsite(_ sender: Any) {
@@ -46,7 +47,7 @@ class CompanyCell: UITableViewCell {
     
     @IBAction func follow(_ sender: Any) {
         companyDetail.isFollowing = !companyDetail.isFollowing
-        follow.setTitle(companyDetail.isFollowing ? "UNFOLLOW" : "FOLLOW", for: .normal)
+        follow.setTitle(companyDetail.isFollowing ? AppStrings.unfollow : AppStrings.follow, for: .normal)
     }
     
     @IBAction func markAsFavourite(_ sender: UIButton) {

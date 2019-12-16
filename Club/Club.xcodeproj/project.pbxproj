@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1C5A7523A3CD230063CD52 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1C5A7423A3CD230063CD52 /* MembersViewController.swift */; };
+		5F1C5A7923A3CE140063CD52 /* AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1C5A7823A3CE140063CD52 /* AppExtensions.swift */; };
 		5FAA2F2D23A24C8A0016F4E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA2F2C23A24C8A0016F4E5 /* AppDelegate.swift */; };
 		5FAA2F2F23A24C8A0016F4E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA2F2E23A24C8A0016F4E5 /* SceneDelegate.swift */; };
 		5FAA2F3123A24C8A0016F4E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA2F3023A24C8A0016F4E5 /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F1C5A7423A3CD230063CD52 /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
+		5F1C5A7823A3CE140063CD52 /* AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
 		5FAA2F2923A24C8A0016F4E5 /* Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Club.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FAA2F2C23A24C8A0016F4E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FAA2F2E23A24C8A0016F4E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5F1C5A7723A3CDFE0063CD52 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F1C5A7823A3CE140063CD52 /* AppExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5FAA2F2023A24C8A0016F4E5 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +94,7 @@
 		5FAA2F2B23A24C8A0016F4E5 /* Club */ = {
 			isa = PBXGroup;
 			children = (
+				5F1C5A7723A3CDFE0063CD52 /* Extensions */,
 				5FAA2F4823A250B00016F4E5 /* Helpers */,
 				5FAA2F4523A24FF90016F4E5 /* Constants */,
 				5FAA2F4423A24FE30016F4E5 /* Controllers */,
@@ -118,6 +131,7 @@
 		5FAA2F4423A24FE30016F4E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5F1C5A7423A3CD230063CD52 /* MembersViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -265,6 +279,8 @@
 				5FAA2F2D23A24C8A0016F4E5 /* AppDelegate.swift in Sources */,
 				5FAA2F2F23A24C8A0016F4E5 /* SceneDelegate.swift in Sources */,
 				5FAA2F4E23A254720016F4E5 /* MemberCell.swift in Sources */,
+				5F1C5A7523A3CD230063CD52 /* MembersViewController.swift in Sources */,
+				5F1C5A7923A3CE140063CD52 /* AppExtensions.swift in Sources */,
 				5FAA2F4C23A2542A0016F4E5 /* CompanyCell.swift in Sources */,
 				5FAA2F4223A24DBE0016F4E5 /* Company.swift in Sources */,
 				5FAA2F4723A250120016F4E5 /* AppConstants.swift in Sources */,

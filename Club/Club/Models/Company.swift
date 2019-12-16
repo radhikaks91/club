@@ -54,6 +54,19 @@ struct Member: Codable {
     var age: Int
     var email: String
     var phone: String
+    var fullName: String {
+        return "\(name.first) \(name.last)"
+    }
+    var isFavourite: Bool {
+        get {
+            let key = "favourite_\(_id)"
+            return UserDefaults.standard.bool(forKey: key)
+        }
+        set {
+            let key = "favourite_\(_id)"
+            UserDefaults.standard.set(newValue, forKey: key)
+        }
+    }
 }
 
 struct Name: Codable {
