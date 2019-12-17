@@ -22,6 +22,9 @@ class CompanyCell: UITableViewCell {
     
     var companyDetail: Company!
     
+    /**
+     Setup table view cell for displaying company details
+    */
     func configureCell(company: Company) {
         companyDetail = company
         if let url = company.logoUrl {
@@ -35,21 +38,33 @@ class CompanyCell: UITableViewCell {
         follow.setTitle(companyDetail.isFollowing ? AppStrings.unfollow : AppStrings.follow, for: .normal)
     }
     
+    /**
+     Open the list of members in a view
+    */
     @IBAction func showMembers(_ sender: Any) {
         parentViewController?.performSegue(withIdentifier: StoryboardIdentifiers.viewMembers, sender: companyDetail)
     }
     
+    /**
+     Open the company's website in browser
+    */
     @IBAction func openWebsite(_ sender: Any) {
         if let url = companyDetail.websiteUrl {
             UIApplication.shared.open(url, options: [:])
         }
     }
     
+    /**
+     Follow or unfollow a company
+    */
     @IBAction func follow(_ sender: Any) {
         companyDetail.isFollowing = !companyDetail.isFollowing
         follow.setTitle(companyDetail.isFollowing ? AppStrings.unfollow : AppStrings.follow, for: .normal)
     }
     
+    /**
+     Mark or unmark a company as favourite
+    */
     @IBAction func markAsFavourite(_ sender: UIButton) {
         favourite.isSelected = !favourite.isSelected
         companyDetail.isFavourite = favourite.isSelected

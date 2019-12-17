@@ -12,6 +12,9 @@ class SortCell: UITableViewCell {
 
     @IBOutlet weak var sortType: UILabel!
     
+    /**
+     Setup table view cell for displaying sort order
+    */
     func configureCell(sort: String) {
         sortType.text = sort
     }

@@ -13,6 +13,9 @@ typealias FetchTaskCompletion = (_ result: [Company]?, _ error: Error?) -> Void
 
 class ServiceManager: NSObject
 {
+    /**
+     API to fetch the list of companies and its members
+     */
     static func fetchCompaniesAndMembers(_ completion: @escaping FetchTaskCompletion) {
         AF.request(Services.fetchCompaniesAndMembers).responseData(completionHandler: { (response) in
             if let data = response.data {

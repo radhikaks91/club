@@ -33,6 +33,9 @@ class MembersViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIApplication.keyboardWillHideNotification, object: nil)
     }
     
+    /**
+     Setup the search controller
+    */
     func setupSeachBar() {
         searchCon.searchResultsUpdater = self
         searchCon.obscuresBackgroundDuringPresentation = false
@@ -43,6 +46,9 @@ class MembersViewController: UIViewController {
         navigationItem.title = AppStrings.members
     }
     
+    /**
+    Updates the table view bottom constraint when keyboard shows
+    */
     @objc
     func keyboardWillShow(notification: Notification) {
         if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
@@ -50,11 +56,17 @@ class MembersViewController: UIViewController {
         }
     }
 
+    /**
+    Updates the table view bottom constraint when keyboard hides
+    */
     @objc
     func keyboardWillHide(notification: Notification) {
         tableBottomConstraint.constant = 0
     }
     
+    /**
+     Filters the tableview content based on search text
+     */
     func filterContentForSearchText(_ searchText: String) {
       filteredMembers = members.filter { (member: Member) -> Bool in
         return member.fullName.lowercased().contains(searchText.lowercased())
@@ -70,6 +82,9 @@ class MembersViewController: UIViewController {
         }
     }
     
+    /**
+     Shows the list of sort orders
+    */
     @IBAction func sortBy(_ sender: Any) {
         performSegue(withIdentifier: StoryboardIdentifiers.viewMembers, sender: self)
     }
@@ -77,7 +92,8 @@ class MembersViewController: UIViewController {
 }
 
 extension MembersViewController: UITableViewDataSource, UITableViewDelegate {
-
+    // MARK: - Table view data source
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredMembers.count
     }
@@ -93,6 +109,8 @@ extension MembersViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension MembersViewController: UISearchResultsUpdating {
+    // MARK: - Search result update
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
         if text == "" {
@@ -107,6 +125,9 @@ extension MembersViewController: UISearchResultsUpdating {
 }
 
 extension MembersViewController: SortTableDelegate {
+    /*
+     Sorts the list of members based on the criteria selected for Age and Name.
+     */
     func sortBy(ageOrder: SortOrder?, nameOrder: SortOrder?) {
         if let aOrder = ageOrder {
             self.ageOrder = aOrder

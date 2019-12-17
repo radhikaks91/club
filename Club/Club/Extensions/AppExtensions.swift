@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIView {
+    /**
+     Returns the parent view controller of a view
+     */
     var parentViewController: UIViewController?
     {
         var parentResponder: UIResponder? = self

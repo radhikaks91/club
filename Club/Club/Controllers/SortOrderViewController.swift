@@ -9,6 +9,9 @@
 import UIKit
 
 protocol SortTableDelegate: NSObjectProtocol {
+    /**
+     Called when a sort criteria is applied
+    */
     func sortBy(ageOrder: SortOrder?, nameOrder: SortOrder?)
 }
 

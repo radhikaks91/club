@@ -32,6 +32,9 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIApplication.keyboardWillHideNotification, object: nil)
     }
     
+    /**
+     Setup the search controller
+    */
     func setupSeachBar() {
         searchCon.searchResultsUpdater = self
         searchCon.obscuresBackgroundDuringPresentation = false
@@ -41,6 +44,9 @@ class ViewController: UIViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
+    /**
+     Fetches and updates the company list
+    */
     func fetchCompanyList() {
         activityIndicator.startAnimating()
         ServiceManager.fetchCompaniesAndMembers { (result, error) in
@@ -57,6 +63,9 @@ class ViewController: UIViewController {
         }
     }
 
+    /**
+    Updates the table view bottom constraint when keyboard shows
+    */
     @objc
     func keyboardWillShow(notification: Notification) {
         if let keyboardHeight = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
@@ -64,17 +73,26 @@ class ViewController: UIViewController {
         }
     }
 
+    /**
+    Updates the table view bottom constraint when keyboard hides
+    */
     @objc
     func keyboardWillHide(notification: Notification) {
         tableBottomConstraint.constant = 0
     }
 
+    /**
+    Filters the tableview content based on search text
+    */
     func filterContentForSearchText(_ searchText: String) {
       filteredCompanies = companies.filter { (company: Company) -> Bool in
         return company.company.lowercased().contains(searchText.lowercased())
       }
     }
     
+    /**
+     Shows the list of sort orders
+    */
     @IBAction func sortBy(_ sender: Any) {
         performSegue(withIdentifier: StoryboardIdentifiers.viewMembers, sender: self)
     }
@@ -95,6 +113,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    // MARK: - Table view data source
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredCompanies.count
     }
@@ -110,6 +130,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ViewController: UISearchResultsUpdating {
+    // MARK: - Search result update
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
         if text == "" {
@@ -124,6 +146,9 @@ extension ViewController: UISearchResultsUpdating {
 }
 
 extension ViewController: SortTableDelegate {
+    /*
+    Sorts the list of companies based on the criteria selected for Name.
+    */
     func sortBy(ageOrder: SortOrder?, nameOrder: SortOrder?) {
         if let nOrder = nameOrder {
             self.nameOrder = nOrder
