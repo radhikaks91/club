@@ -67,6 +67,12 @@ struct Member: Codable {
             UserDefaults.standard.set(newValue, forKey: key)
         }
     }
+    var phoneUrl: URL? {
+        return URL(string: "tel://" + phone.replacingOccurrences(of: " ", with: ""))
+    }
+    var emailUrl: URL? {
+        return URL(string: "mailto:" + email)
+    }
 }
 
 struct Name: Codable {

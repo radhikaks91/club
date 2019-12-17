@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F1C5A7523A3CD230063CD52 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1C5A7423A3CD230063CD52 /* MembersViewController.swift */; };
 		5F1C5A7923A3CE140063CD52 /* AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1C5A7823A3CE140063CD52 /* AppExtensions.swift */; };
+		5F4E850823A79946009ECC54 /* SortOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E850723A79946009ECC54 /* SortOrderViewController.swift */; };
+		5F4E850A23A799D4009ECC54 /* SortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4E850923A799D4009ECC54 /* SortCell.swift */; };
 		5FAA2F2D23A24C8A0016F4E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA2F2C23A24C8A0016F4E5 /* AppDelegate.swift */; };
 		5FAA2F2F23A24C8A0016F4E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA2F2E23A24C8A0016F4E5 /* SceneDelegate.swift */; };
 		5FAA2F3123A24C8A0016F4E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA2F3023A24C8A0016F4E5 /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		5F1C5A7423A3CD230063CD52 /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
 		5F1C5A7823A3CE140063CD52 /* AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
+		5F4E850723A79946009ECC54 /* SortOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOrderViewController.swift; sourceTree = "<group>"; };
+		5F4E850923A799D4009ECC54 /* SortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCell.swift; sourceTree = "<group>"; };
 		5FAA2F2923A24C8A0016F4E5 /* Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Club.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FAA2F2C23A24C8A0016F4E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FAA2F2E23A24C8A0016F4E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			children = (
 				5FAA2F4B23A2542A0016F4E5 /* CompanyCell.swift */,
 				5FAA2F4D23A254720016F4E5 /* MemberCell.swift */,
+				5F4E850923A799D4009ECC54 /* SortCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				5F1C5A7423A3CD230063CD52 /* MembersViewController.swift */,
+				5F4E850723A79946009ECC54 /* SortOrderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -276,9 +282,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FAA2F3123A24C8A0016F4E5 /* ViewController.swift in Sources */,
+				5F4E850A23A799D4009ECC54 /* SortCell.swift in Sources */,
 				5FAA2F2D23A24C8A0016F4E5 /* AppDelegate.swift in Sources */,
 				5FAA2F2F23A24C8A0016F4E5 /* SceneDelegate.swift in Sources */,
 				5FAA2F4E23A254720016F4E5 /* MemberCell.swift in Sources */,
+				5F4E850823A79946009ECC54 /* SortOrderViewController.swift in Sources */,
 				5F1C5A7523A3CD230063CD52 /* MembersViewController.swift in Sources */,
 				5F1C5A7923A3CE140063CD52 /* AppExtensions.swift in Sources */,
 				5FAA2F4C23A2542A0016F4E5 /* CompanyCell.swift in Sources */,

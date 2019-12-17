@@ -31,4 +31,17 @@ class MemberCell: UITableViewCell {
         favourite.isSelected = !favourite.isSelected
         memberDetail.isFavourite = favourite.isSelected
     }
+    
+    @IBAction func makeCall(_ sender: Any) {
+        if let phone = memberDetail.phoneUrl {
+            UIApplication.shared.open(phone)
+        }
+    }
+   
+    @IBAction func sendMail(_ sender: Any) {
+        if let mail = memberDetail.emailUrl {
+            UIApplication.shared.open(mail)
+        }
+    }
+    
 }

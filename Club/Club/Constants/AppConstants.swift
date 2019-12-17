@@ -18,6 +18,8 @@ struct StoryboardIdentifiers
     static let viewMembers = "viewMembers"
     static let companyCell = "companyCell"
     static let memberCell = "memberCell"
+    static let sortCell = "sortCell"
+    static let sortCompanies = "sortCompanies"
 }
 
 struct AppStrings {
@@ -27,20 +29,24 @@ struct AppStrings {
     static let company = "Company"
     static let follow = "FOLLOW"
     static let unfollow = "UNFOLLOW"
-    static let nameAsc = "Name - Ascending"
-    static let nameDesc = "Name - Descending"
-    static let ageAsc = "Age - Ascending"
-    static let ageDesc = "Age - Descending"
-    static let ageNameAsc = "Age & Name - Ascending"
-    static let ageNameDesc = "Age & Name - Descending"
+    static let ascending = "Ascending"
+    static let descending = "Descending"
     static let sortBy = "Sort By"
+    static let name = "Name"
+    static let age = "Age"
 }
 
-enum SortOrder: String {
-    case nameAsc = "Name - Ascending"
-    case nameDesc = "Name - Descending"
-    case ageAsc = "Age - Ascending"
-    case ageDesc = "Age - Descending"
-    case ageNameAsc = "Age & Name - Ascending"
-    case ageNameDesc = "Age & Name - Descending"
+enum SortOrder: CaseIterable {
+    case ascending
+    case descending
+}
+
+enum SortType: CaseIterable {
+    case name
+    case age
+}
+
+enum Feature: Int {
+    case company
+    case member
 }
